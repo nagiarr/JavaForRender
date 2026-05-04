@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ArithoshiController {
-    @GetMapping("/index")
+    @GetMapping({ "/", "/index" })
     public String hello() {
         return "index";
     }
