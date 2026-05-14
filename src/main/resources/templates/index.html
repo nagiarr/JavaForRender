@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http:www.tymeleaf.org">
 <head>
-    <title>Aritoshi</title>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
 </head>
 <body>
-    <h1>Hello Aritoshi</h1>
+    <h1>Todo一覧</h1>
+
+    <ul>
+        <li th:each="todo : ${todos}">
+            <span th:text="${todo.task}"></span>
+        </li>
+    </ul>
 </body>
 </html>
