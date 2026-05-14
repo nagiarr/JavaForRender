@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import yanagimachi.aritoshi.entity.Todo;
 import yanagimachi.aritoshi.repository.TodoRepository;
@@ -23,6 +25,13 @@ public class TodoController {
         model.addAttribute("todos", todos);
 
         return "index";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteTodo(@PathVariable Long id) {
+        todoRepository.deleteById(id);
+
+        return "redirect:/";
     }
 
     @PostMapping("/add")

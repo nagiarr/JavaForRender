@@ -17,6 +17,10 @@
     <ul>
         <li th:each="todo : ${todos}">
             <span th:text="${todo.task}"></span>
+
+            <a th:href="@{/delete/{id}(id=${todo.id})}">
+                削除
+            </a>
         </li>
     </ul>
 </body>
