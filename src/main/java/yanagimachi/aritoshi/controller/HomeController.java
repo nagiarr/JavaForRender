@@ -4,9 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class ArithoshiController {
+public class HomeController {
     @GetMapping("/")
-    public String hello() {
+    public String home() {
         return "index";
     }
 }
