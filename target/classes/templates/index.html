@@ -7,6 +7,13 @@
 <body>
     <h1>Todo一覧</h1>
 
+    <form action="/add" method="post">
+        <input type="text" name="task">
+        <button type="submit">
+            タスクを追加
+        </button>
+    </form>
+    
     <ul>
         <li th:each="todo : ${todos}">
             <span th:text="${todo.task}"></span>
