@@ -1,26 +1,27 @@
 package yanagimachi.aritoshi.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import yanagimachi.aritoshi.entity.Todo;
 import yanagimachi.aritoshi.repository.TodoRepository;
 
-@RestController
+@Controller
 public class TodoController {
 
     @Autowired
     private TodoRepository todoRepository;
 
-    @GetMapping("/add")
-    public String addTodo() {
+    @GetMapping("/")
+    public String index(Model model) {
 
-        Todo todo = new Todo();
-        todo.setTask("Spring Boot勉強");
+        List<Todo> todos = todoRepository.findAll();
+        model.addAttribute("todos", todos);
 
-        todoRepository.save(todo);
-
-        return "Todo Saved";
+        return "index";
     }
 }
