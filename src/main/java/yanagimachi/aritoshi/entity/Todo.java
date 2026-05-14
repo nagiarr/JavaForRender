@@ -11,7 +11,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor // 引数ないしコンストラクタの生成
+@NoArgsConstructor // 引数なしコンストラクタの生成
 public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
