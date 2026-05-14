@@ -24,4 +24,16 @@ public class TodoController {
 
         return "index";
     }
+
+    @PostMapping("/add")
+    public String addTodo(String task) {
+        Todo todo = new Todo();
+
+        todo.setTask(task);
+
+        todoRepository.save(todo);
+
+        return "redirect:/";
+    }
+
 }
