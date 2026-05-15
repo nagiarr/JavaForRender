@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>編集画面</title>
+</head>
+
+<body>
+
+<h1>Todo編集</h1>
+<form th:action="@{/update}" method="post">
+
+    <input type="hidden"
+           name="id"
+           th:value="${todo.id}">
+
+    <input type="text"
+           name="task"
+           th:value="${todo.task}">
+    
+    <button type="submit">
+        更新
+    </button>
+</form>
+
+</body>
+
+</html>

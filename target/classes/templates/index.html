@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http:www.tymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Todo App</title>
@@ -21,7 +21,14 @@
             <a th:href="@{/delete/{id}(id=${todo.id})}">
                 削除
             </a>
+
+            <a th:href="@{/edit/{id}(id=${todo.id})}">
+                編集
+            </a>
         </li>
     </ul>
+
+    
+
 </body>
 </html>
